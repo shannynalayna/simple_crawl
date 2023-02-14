@@ -1,0 +1,22 @@
+[package]
+name = "crawl_daemon"
+version = "0.1.0"
+authors = ["Shannyn"]
+edition = "2021"
+description = "Simple crawler that will reach one domain and create a tree of found links to the initial site."
+
+[lib]
+name = "crawl_daemon"
+path = "src/lib.rs"
+
+[[bin]]
+name = "crawl_daemon"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "^1"
+reqwest = "0.11.14"
+select = "0.6.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "^1"
+tokio = { version = "1", features = ["rt", "sync", "macros", "rt-multi-thread"] }
